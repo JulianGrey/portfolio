@@ -8,6 +8,7 @@
     "dev": "cd frontend && pnpm run dev",
     "build": "cd frontend && pnpm run build",
     "lint": "cd frontend && pnpm run lint",
-    "preview": "cd frontend && pnpm run preview"
+    "preview": "cd frontend && pnpm run preview",
+    "test": "cd frontend && pnpm run test"
   }
 }
