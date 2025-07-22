@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'backend/**'
 
 jobs:
   deploy:
@@ -39,8 +41,9 @@ jobs:
 
       - name: Install dependencies and create deployment package
         run: |
+          cd backend
           pnpm install --frozen-lockfile
-          zip -r deployment.zip . -x ".git/*" ".github/*" "README.md" ".gitignore" "logs/" ".env*"
+          zip -r ../deployment.zip . -x ".git/*" ".github/*" "README.md" ".gitignore" "logs/" ".env*"
 
       - name: Deploy to AWS Lambda
         run: |
