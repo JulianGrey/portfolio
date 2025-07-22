@@ -2,10 +2,6 @@
 
 This is a combined portfolio repository containing multiple projects for AWS Amplify hosting.
 
-## Projects
-
-- `portfolio-site/` - Main portfolio website
-
 # Portfolio Site
 
 A space within the interwebtubes to showcase my ability to communicate with a computer through a keyboard.
