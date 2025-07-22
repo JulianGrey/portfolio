@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "install": "cd frontend && pnpm install && cd ../backend && pnpm install",
-    "install:frontend": "cd frontend && pnpm install",
-    "install:backend": "cd backend && pnpm install",
+    "install": "cd frontend && pnpm install --frozen-lockfile && cd ../backend && pnpm install",
+    "install:frontend": "cd frontend && pnpm install --frozen-lockfile",
+    "install:backend": "cd backend && pnpm install --frozen-lockfile",
     "dev": "cd frontend && pnpm run dev",
     "dev:backend": "cd backend && pnpm run local-server",
     "dev:db": "cd backend && pnpm run local-docker",
