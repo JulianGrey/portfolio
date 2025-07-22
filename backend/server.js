@@ -23,7 +23,10 @@ const limiter = rateLimit({
   legacyHeaders: false
 });
 
-const ddbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
+const ddbClient = new DynamoDBClient({ 
+  region: process.env.AWS_REGION,
+  ...(process.env.DYNAMODB_ENDPOINT && { endpoint: process.env.DYNAMODB_ENDPOINT })
+});
 const docClient = DynamoDBDocumentClient.from(ddbClient);
 const tableName = process.env.TABLE_NAME;
 
@@ -109,5 +112,14 @@ app.put('/api/to-do/:id', async (req, res) => {
     res.status(500).json({ error: 'Database error' });
   }
 });
+
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+    console.log('CORS enabled for:', process.env.ALLOWED_ORIGINS);
+  });
+}
 
 module.exports.handler = serverless(app);
