@@ -1,9 +1,9 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.12.3",
   "scripts": {
     "install": "cd frontend && pnpm install --frozen-lockfile && cd ../backend && pnpm install",
     "install:frontend": "cd frontend && pnpm install --frozen-lockfile",
