@@ -1,14 +1,6 @@
 # Portfolio
 
-This is a combined portfolio repository containing multiple projects for AWS Amplify hosting.
-
-# Portfolio Site
-
-A space within the interwebtubes to showcase my ability to communicate with a computer through a keyboard.
-
 JulianGrey.dev acts as a window looking into my development life. First created in 2014 using HTML, CSS, JavaScript and jQuery, I have resurrected and rewritten the code in React to provide a platform to eventually house and link directly to projects past, present and eventually future.
-
-Currently there aren't any completed projects that I am happy to show on my website, however I am considering putting work-in-progress projects on my website to have more of a living process be made public and ready available for all to see.
 
 The centrepiece of my website is what I call the "Navgrid", a crossword-style navigation which shows different content depending on which word you click.
 
@@ -26,3 +18,47 @@ Back in 2014 this was purely desktop, as I failed to come up with a functional d
 <img width="333" alt="Screenshot_20250717-211507" src="https://github.com/user-attachments/assets/37b9765e-4e98-4cfc-a0d2-e652c795feeb" />
 
 <img width="333" alt="Screenshot_20250717-211534" src="https://github.com/user-attachments/assets/adbf7672-541b-4fde-8a21-d566c6378357" />
+
+
+## Structure
+
+- `frontend/` - React + Vite portfolio website with integrated TodoApp
+- `backend/` - Node.js + Express API server with DynamoDB
+- Root package.json with scripts to manage both frontend and backend
+
+
+## Available Scripts
+
+### Installation
+- `pnpm run install` - Install both frontend and backend dependencies
+- `pnpm run install:frontend` - Install only frontend dependencies  
+- `pnpm run install:backend` - Install only backend dependencies
+
+### Development
+- `pnpm run dev` - Start frontend development server
+- `pnpm run dev:backend` - Start backend API server
+- `pnpm run dev:db` - Start local DynamoDB (Docker required)
+- `pnpm run setup:backend` - Setup local DB and start backend server
+
+### Production
+- `pnpm run build` - Build frontend for production
+- `pnpm run preview` - Preview production build
+- `pnpm run test` - Run frontend tests
+- `pnpm run lint` - Lint frontend code
+
+
+## Projects Included
+
+### Portfolio Site
+
+A website written in React, showcasing my ability to communicate with a computer through a keyboard.
+- React + Vite frontend
+- Hosted on AWS
+
+### TodoApp
+
+A full-stack todo application with React frontend and Node.js backend, featuring:
+- Create, read, update, delete todos
+- Persistent storage with DynamoDB
+- Clean, responsive UI
+- Full testing suite
