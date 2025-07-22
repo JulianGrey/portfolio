@@ -1,7 +1,7 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export async function getTodos() {
-  const response = await fetch(`${API_BASE_URL}to-do`);
+  const response = await fetch(`${API_BASE_URL}to-dos`);
   if (!response.ok) {
     throw new Error('Failed to fetch to dos');
   }
@@ -10,7 +10,7 @@ export async function getTodos() {
 }
 
 export async function addTodo(title: string, description: string) {
-  const response = await fetch(`${API_BASE_URL}to-do/add`, {
+  const response = await fetch(`${API_BASE_URL}to-dos/add`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ export async function addTodo(title: string, description: string) {
 }
 
 export async function deleteTodo(id: number) {
-  const response = await fetch(`${API_BASE_URL}to-do/${id}`, {
+  const response = await fetch(`${API_BASE_URL}to-dos/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export async function deleteTodo(id: number) {
 }
 
 export async function updateTodo(title: string, description: string, id: number) {
-  const response = await fetch(`${API_BASE_URL}to-do/${id}`, {
+  const response = await fetch(`${API_BASE_URL}to-dos/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
