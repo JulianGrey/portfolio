@@ -1,0 +1,41 @@
+.to-do {
+  margin-top: 12px;
+
+  label {
+    margin-bottom: 4px;
+  }
+
+  .actions {
+    margin-top: 8px;
+  }
+
+  .edit-to-do {
+    display: flex;
+    flex-direction: column;
+
+    &.edit-to-do-description {
+      margin-top: 8px;
+    }
+
+    input {
+      min-width: 200px;
+    }
+  }
+
+  .to-do-header {
+    align-items: center;
+    justify-content: space-between;
+
+    &, .headline {
+      display: flex;
+    }
+
+    .headline {
+      align-items: baseline;
+    }
+  }
+
+  .to-do-description {
+    margin-top: 8px;
+  }
+}
