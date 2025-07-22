@@ -1,0 +1,9 @@
+@use '../../styles/variables';
+
+.footer {
+  margin: variables.$layout-buffer 0;
+
+  li {
+    list-style-type: none;
+  }
+}

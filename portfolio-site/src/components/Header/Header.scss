@@ -1,0 +1,8 @@
+@use '../../styles/variables';
+
+header {
+  position: fixed;
+  padding: 12px;
+  width: 100%;
+  background: variables.$header-background-colour;
+}
