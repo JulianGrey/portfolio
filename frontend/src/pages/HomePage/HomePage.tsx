@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navgrid from '../../components/Navgrid/Navgrid';
 import { content } from '../../components/Navgrid/content';
 import { capitalise } from '../../utils/utils';
-import './Home.scss';
+import './HomePage.scss';
 
 const contents = content;
 
@@ -23,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='home'>
+    <div className='home-page'>
       <div className='navgrid-content'>
         <div className='content-text' id='content-text'>
           <h2 className='bold'>{capitalise(selection)}</h2>

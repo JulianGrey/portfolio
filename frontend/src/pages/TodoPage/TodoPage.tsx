@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import './TodoApp.scss';
+import './TodoPage.scss';
 import {
   addTodo,
   deleteTodo,
   getTodos,
   updateTodo,
-} from './services/todoService';
-import Todo, { type TodoProps } from './components/Todo/Todo';
+} from '../../services/todoService';
+import Todo, { type TodoProps } from '../../components/Todo/Todo';
 
 function App() {
   const defaultMessage = 'You have no tasks.';
@@ -48,32 +48,29 @@ function App() {
   }, []);
 
   return (
-    <div id='to-do-app'>
-      <main>
-        <div className='to-do-list'>
-          {
-            (
-              <ul>
+    <div className='to-do-page'>
+      <div className='to-do-list'>
+        {
+          (
+            <ul>
+              <Todo
+                todo={{ title: '', description: '' }}
+                isNewTodo={true}
+                onAdd={handleAddTodo}
+              />
+              {todoList.length > 0 && todoList.map((todo, index) => (
                 <Todo
-                  todo={{ title: '', description: '' }}
-                  isNewTodo={true}
-                  onAdd={handleAddTodo}
+                  todo={todo}
+                  key={index}
+                  onDelete={handleDeleteTodo}
+                  onUpdate={handleUpdateTodo}
                 />
-                {todoList.length > 0 && todoList.map((todo, index) => (
-                  <Todo
-                    todo={todo}
-                    key={index}
-                    onDelete={handleDeleteTodo}
-                    onUpdate={handleUpdateTodo}
-                  />
-                ))}
-              </ul>
-            )
-          }
-          { !todoList.length && (<p className='no-to-dos'>{defaultMessage}</p>) }
-        </div>
-      </main>
-      <footer></footer>
+              ))}
+            </ul>
+          )
+        }
+        { !todoList.length && (<p className='no-to-dos'>{defaultMessage}</p>) }
+      </div>
     </div>
   );
 }

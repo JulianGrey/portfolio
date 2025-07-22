@@ -2,7 +2,32 @@
 
 header {
   position: fixed;
+  height: 80px;
   padding: 12px;
   width: 100%;
   background: variables.$header-background-colour;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
 }

@@ -1,14 +1,21 @@
 import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Layout from './layouts/Layout';
-import Home from './pages/Home/Home';
+import HomePage from './pages/HomePage/HomePage';
+import TodoPage from './pages/TodoPage/TodoPage';
 
 function App() {
   return (
     <div className="portfolio-site">
-      <Layout>
-        <Home />
-      </Layout>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/todo-app" element={<TodoPage />} />
+          </Routes>
+        </Layout>
+      </Router>
     </div>
   );
 }

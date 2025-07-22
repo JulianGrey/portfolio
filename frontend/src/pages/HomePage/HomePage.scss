@@ -1,6 +1,6 @@
 @use '../../styles/variables';
 
-.home {
+.home-page {
   margin: 16px;
 
   &, .navgrid-content {
@@ -35,7 +35,7 @@
 }
 
 @media (max-width: 767px) {
-  .home {
+  .home-page {
     .navgrid-content {
       flex-direction: column;
 
@@ -46,6 +46,7 @@
         justify-content: center;
 
         .expand-plus {
+          cursor: pointer;
           width: 3em;
           height: 3em;
           display: flex;

@@ -1,13 +1,19 @@
-#to-do-app {
-  main {
-    margin: auto;
-    display: flex;
-    max-width: 800px;
-    flex-direction: column;
+@use '../../styles/variables';
 
-    .no-to-dos {
-      margin-top: 12px;
-    }
+.to-do-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: auto;
+  max-width: 800px;
+  
+  &, .to-do-list {
+    width: 100%;
+  }
+
+  .no-to-dos {
+    margin-top: 12px;
   }
 
   button {
@@ -21,6 +27,7 @@
   }
 
   .blue-container {
+    color: variables.$dark-grey;
     border: 1px solid rgba(0, 0, 0, 0.36);
     border-radius: 10px;
     padding: 10px;
