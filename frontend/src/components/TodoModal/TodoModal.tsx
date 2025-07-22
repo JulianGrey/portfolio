@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 import Button from '../Button/Button';
-import './Modal.scss';
+import './TodoModal.scss';
 
 interface ModalProps {
   onCancel: () => void;
@@ -10,7 +10,7 @@ interface ModalProps {
 
 export default function Modal({ onCancel, onConfirm, children }: ModalProps) {
   return (
-    <div className='modal' data-testid='modal'>
+    <div className='todo-modal' data-testid='todo-modal'>
       <div className='modal-dialog blue-container'>
         { children }
         <div className='modal-actions'>

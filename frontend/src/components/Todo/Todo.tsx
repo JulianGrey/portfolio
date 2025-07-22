@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './Todo.scss';
 import Button from '../Button/Button';
-import Modal from '../Modal-todo/Modal';
+import TodoModal from '../TodoModal/TodoModal';
 
 export interface TodoProps {
   title: string,
@@ -163,9 +163,9 @@ export default function Todo({
         </div>
       </li>
       {showModal && createPortal(
-        <Modal onCancel={() => setShowModal(false)} onConfirm={handleDelete}>
+        <TodoModal onCancel={() => setShowModal(false)} onConfirm={handleDelete}>
           <p>Are you sure you want to delete "{todo.title}"?</p>
-        </Modal>,
+        </TodoModal>,
         document.getElementById('to-do-app') as HTMLElement,
       )}
     </>

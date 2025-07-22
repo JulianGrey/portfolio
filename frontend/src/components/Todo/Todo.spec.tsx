@@ -18,7 +18,7 @@ describe('Todo component', () => {
   const findCancelButton = () => screen.queryByTestId('cancel-button');
   const findDeleteButton = () => screen.queryByTestId('delete-button');
   const findEditButton = () => screen.queryByTestId('edit-button');
-  const findModal = () => screen.queryByTestId('modal');
+  const findModal = () => screen.queryByTestId('todo-modal');
   const findUpdateButton = () => screen.queryByTestId('update-button');
 
   it('shows the provided title', () => {
