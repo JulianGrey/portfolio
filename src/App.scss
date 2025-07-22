@@ -1,0 +1,38 @@
+@use './styles/variables';
+
+html {
+  background: variables.$background-colour;
+  color: variables.$white;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Muli', 'Arial', sans-serif;
+}
+
+header, main, footer {
+  display: flex;
+  justify-content: center;
+
+  & > * {
+    max-width: 1280px;
+  }
+}
+
+a {
+  font-weight: bold;
+  color: variables.$hyperlink;
+  text-decoration: none;
+
+  &:active {
+    color: variables.$red;
+  }
+
+  &:hover {
+    color: variables.$dark-grey;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}

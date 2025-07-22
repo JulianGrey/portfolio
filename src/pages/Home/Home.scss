@@ -1,0 +1,82 @@
+@use '../../styles/variables';
+
+.home {
+  margin: 16px;
+
+  &, .navgrid-content {
+    display: flex;
+  }
+
+  .navgrid-content {
+    align-items: center;
+
+    .content-expand {
+      display: none;
+    }
+
+    .content-text {
+      margin-right: 24px;
+
+      h2 {
+        color: variables.$red;
+      }
+
+      li {
+        list-style-type: disc;
+        margin-left: 12px;
+      }
+      
+      .top-spacing {
+        display: block;
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home {
+    .navgrid-content {
+      flex-direction: column;
+
+      .content-expand {
+        display: flex;
+        margin-top: 24px;
+        width: 100%;
+        justify-content: center;
+
+        .expand-plus {
+          width: 3em;
+          height: 3em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #365398;
+          border-radius: 100%;
+          animation: rotate-plus 4s ease-out infinite;
+
+          &::before {
+            content: "\002B";
+            font-size: 2em;
+          }
+        }
+      }
+
+      .content-text {
+        margin: auto;
+      }
+    }
+  }
+}
+
+@keyframes rotate-plus {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(540deg); // Slows down at the end
+  }
+  100% {
+    transform: rotate(540deg); // Slows down at the end
+  }
+}
