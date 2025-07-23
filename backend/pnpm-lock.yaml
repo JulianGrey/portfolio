@@ -56,6 +56,9 @@ importers:
       merge-descriptors:
         specifier: ^2.0.0
         version: 2.0.0
+      mime-db:
+        specifier: ^1.54.0
+        version: 1.54.0
       mime-types:
         specifier: ^3.0.1
         version: 3.0.1
