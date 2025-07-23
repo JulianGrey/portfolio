@@ -27,6 +27,7 @@
     "ee-first": "^1.1.1",
     "encodeurl": "^2.0.0",
     "es-errors": "^1.3.0",
+    "es-object-atoms": "^1.1.1",
     "escape-html": "^1.0.3",
     "etag": "^1.8.1",
     "express": "^5.1.0",
