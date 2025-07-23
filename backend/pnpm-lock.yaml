@@ -98,6 +98,9 @@ importers:
       side-channel-list:
         specifier: ^1.0.0
         version: 1.0.0
+      side-channel-map:
+        specifier: ^1.0.1
+        version: 1.0.1
       statuses:
         specifier: ^2.0.2
         version: 2.0.2
