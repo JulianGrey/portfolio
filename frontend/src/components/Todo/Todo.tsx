@@ -166,7 +166,7 @@ export default function Todo({
         <TodoModal onCancel={() => setShowModal(false)} onConfirm={handleDelete}>
           <p>Are you sure you want to delete "{todo.title}"?</p>
         </TodoModal>,
-        document.getElementById('to-do-app') as HTMLElement,
+        document.getElementById('to-do-page') as HTMLElement,
       )}
     </>
   );
