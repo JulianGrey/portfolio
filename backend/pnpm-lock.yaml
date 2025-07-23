@@ -59,6 +59,9 @@ importers:
       forwarded:
         specifier: ^0.2.0
         version: 0.2.0
+      get-intrinsic:
+        specifier: ^1.3.0
+        version: 1.3.0
       ipaddr.js:
         specifier: ^2.2.0
         version: 2.2.0
