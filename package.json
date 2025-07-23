@@ -1,20 +1,20 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
-  "packageManager": "pnpm@10.12.3",
+  "packageManager": "npm@10.8.2",
   "scripts": {
-    "install": "cd frontend && pnpm install --frozen-lockfile && cd ../backend && pnpm install",
-    "install:frontend": "cd frontend && pnpm install --frozen-lockfile",
-    "install:backend": "cd backend && pnpm install --frozen-lockfile",
-    "dev": "cd frontend && pnpm run dev",
-    "dev:backend": "cd backend && pnpm run local-server",
-    "dev:db": "cd backend && pnpm run local-docker",
-    "setup:backend": "cd backend && pnpm run setup-and-run-local",
-    "build": "cd frontend && pnpm run build",
-    "lint": "cd frontend && pnpm run lint",
-    "preview": "cd frontend && pnpm run preview",
-    "test": "cd frontend && pnpm run test"
+    "install": "cd frontend && npm install && cd ../backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "dev": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run local-server",
+    "dev:db": "cd backend && npm run local-docker",
+    "setup:backend": "cd backend && npm run setup-and-run-local",
+    "build": "cd frontend && npm run build",
+    "lint": "cd frontend && npm run lint",
+    "preview": "cd frontend && npm run preview",
+    "test": "cd frontend && npm run test"
   }
 }

@@ -36,16 +36,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+          cache: 'npm'
+          cache-dependency-path: 'backend/package-lock.json'
 
       - name: Install dependencies and create deployment package
         run: |
           cd backend
-          rm -rf node_modules pnpm-lock.yaml
-          pnpm install
+          rm -rf node_modules
+          npm ci --omit=dev
+          echo "Checking node_modules structure:"
+          ls -la node_modules/ | grep express || echo "Express not found"
           zip -r ../deployment.zip . -x ".git/*" ".github/*" "README.md" ".gitignore" "logs/" ".env*"
+          echo "Deployment package size:"
+          ls -lh ../deployment.zip
 
       - name: Deploy to AWS Lambda
         run: |
