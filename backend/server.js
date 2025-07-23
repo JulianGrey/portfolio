@@ -30,6 +30,9 @@ const ddbClient = new DynamoDBClient({
 const docClient = DynamoDBDocumentClient.from(ddbClient);
 const tableName = process.env.TABLE_NAME;
 
+// Required for Lambda to work correctly
+app.set('trust proxy', true);
+
 app.use(express.json());
 app.use(limiter);
 app.use(cors({
