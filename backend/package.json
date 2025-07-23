@@ -24,6 +24,7 @@
     "depd": "^2.0.0",
     "dotenv": "^17.1.0",
     "encodeurl": "^2.0.0",
+    "escape-html": "^1.0.3",
     "express": "^5.1.0",
     "express-rate-limit": "^8.0.1",
     "finalhandler": "^2.1.0",
