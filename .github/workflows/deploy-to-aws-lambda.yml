@@ -55,6 +55,6 @@ jobs:
 
           aws lambda update-function-configuration \
             --function-name to-do-app-express-api \
-            --environment Variables="{TABLE_NAME=todos,ALLOWED_ORIGINS=${{ env.ALLOWED_ORIGINS }},NODE_ENV=production}" \
+            --environment Variables="{TABLE_NAME=todos,NODE_ENV=production,ALLOWED_ORIGINS=${{ env.ALLOWED_ORIGINS }}}" \
             --timeout 30 \
             --region ${{ env.AWS_REGION }}
