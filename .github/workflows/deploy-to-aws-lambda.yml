@@ -43,7 +43,8 @@ jobs:
       - name: Install dependencies and create deployment package
         run: |
           cd backend
-          pnpm install --frozen-lockfile
+          rm -rf node_modules pnpm-lock.yaml
+          pnpm install
           zip -r ../deployment.zip . -x ".git/*" ".github/*" "README.md" ".gitignore" "logs/" ".env*"
 
       - name: Deploy to AWS Lambda
