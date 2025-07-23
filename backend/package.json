@@ -20,6 +20,7 @@
     "@aws-sdk/lib-dynamodb": "^3.848.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "debug": "^4.4.1",
     "depd": "^2.0.0",
     "dotenv": "^17.1.0",
     "express": "^5.1.0",
