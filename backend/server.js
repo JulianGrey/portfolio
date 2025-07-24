@@ -14,6 +14,36 @@ const {
 
 const app = express();
 
+// CORS configuration - ONLY for local development
+// In production (AWS Lambda), CORS is handled by Lambda Function URL configuration
+// This middleware will NOT run in production because NODE_ENV !== 'development'
+if (process.env.NODE_ENV === 'development' && process.env.ALLOWED_ORIGINS) {
+  const cors = require('cors');
+  
+  const corsOptions = {
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      
+      const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+        
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  };
+
+  app.use(cors(corsOptions));
+  console.log('🔧 Local CORS enabled for origins:', process.env.ALLOWED_ORIGINS);
+} else {
+  console.log('🚀 Production mode: CORS handled by Lambda Function URL');
+}
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 30,

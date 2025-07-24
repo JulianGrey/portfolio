@@ -43,9 +43,11 @@ jobs:
         run: |
           cd backend
           rm -rf node_modules
-          npm ci
+          npm ci --omit=dev
           echo "Checking node_modules structure:"
           ls -la node_modules/ | grep express || echo "Express not found"
+          echo "Verifying cors is not included in production:"
+          ls -la node_modules/ | grep cors || echo "✅ CORS not included (as expected)"
           zip -r ../deployment.zip . -x ".git/*" ".github/*" "README.md" ".gitignore" "logs/" ".env*"
           echo "Deployment package size:"
           ls -lh ../deployment.zip
