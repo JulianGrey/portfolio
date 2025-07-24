@@ -34,7 +34,7 @@ const ddbClient = new DynamoDBClient({
 const docClient = DynamoDBDocumentClient.from(ddbClient);
 const tableName = process.env.TABLE_NAME;
 
-app.set('trust proxy', true);
+app.set('trust proxy', 1);
 app.use(express.json());
 app.use(limiter);
 
