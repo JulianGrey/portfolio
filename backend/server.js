@@ -30,9 +30,9 @@ const ddbClient = new DynamoDBClient({
 const docClient = DynamoDBDocumentClient.from(ddbClient);
 const tableName = process.env.TABLE_NAME;
 
+app.set('trust proxy', 1);
 app.use(express.json());
 app.use(limiter);
-app.set('trust proxy', 1);
 // app.use(cors({
 //   origin: allowedOrigins,
 //   optionsSuccessStatus: 200,
