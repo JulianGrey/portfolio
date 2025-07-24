@@ -1,8 +1,9 @@
+import { type ReactNode } from 'react';
 import { getTimeGreeting } from "../../utils/utils";
 
 export interface ContentType {
   category: string;
-  description: React.ReactNode;
+  description: ReactNode;
 }
 
 export const content: ContentType[] = [
