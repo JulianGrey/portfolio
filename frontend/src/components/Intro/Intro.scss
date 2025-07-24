@@ -1,0 +1,10 @@
+@use '../../styles/variables';
+
+.intro {
+  margin-bottom: 24px;
+
+  h1 {
+    color: variables.$red;
+    margin-bottom: 8px;
+  }
+}
