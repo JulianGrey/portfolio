@@ -49,6 +49,12 @@ function App() {
 
   return (
     <div className='to-do-page' id='to-do-page'>
+      <div className='project-intro'>
+        <h1 className='bold'>To Do App</h1>
+        <p>Welcome to the To Do app.</p>
+        <p>The backend is hosted on AWS Lambda to act as the middleman between the AWS Amplify frontend and the DynamoDB database. The deployment of the service is handled by a CI/CD process through GitHub Actions, triggered by an upload to the main branch but can also be triggered manually.</p>
+        <p>You are invited to play around with the project but please be respectful with the content you choose to write.</p>
+      </div>
       <div className='to-do-list'>
         {
           (
