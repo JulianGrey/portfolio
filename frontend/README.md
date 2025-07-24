@@ -1,10 +1,9 @@
 # To Do App Frontend
 
-The frontend is powered by React + Vite, and hosted on AWS Amplify. The deployment is fully automated when a push to GitHub's main branch is detected, and the website is deployed inside Amplify.
-
 The centrepiece of my website is what I call the "Navgrid", a crossword-style navigation which shows different content depending on which word you click.
 
-
+The frontend is powered by React + Vite, and hosted on AWS Amplify. The deployment is fully automated when a push to GitHub's main branch is detected, and the website is deployed inside Amplify.
+<br /><br />
 <img width="1512" alt="Desktop screenshot" src="https://github.com/user-attachments/assets/eaa46505-72b8-44e0-9e4c-ddeec1ccdd32" />
 <br /><br />
 <img width="1512" alt="Desktop screenshot 2" src="https://github.com/user-attachments/assets/b861c53e-9a7f-4d9e-a9f6-b954b86a5c2a" />
