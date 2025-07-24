@@ -20,7 +20,13 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 30,
   standardHeaders: true,
-  legacyHeaders: false
+  legacyHeaders: false,
+  trustProxy: true,
+  skipSuccessfulRequests: false,
+  skipFailedRequests: false,
+  keyGenerator: (req) => {
+    return req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown';
+  }
 });
 
 const ddbClient = new DynamoDBClient({ 
