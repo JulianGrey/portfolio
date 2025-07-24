@@ -20,7 +20,10 @@ export async function addTodo(title: string, description: string) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ sanitisedTitle, sanitisedDescription }),
+    body: JSON.stringify({
+      title: sanitisedTitle,
+      description: sanitisedDescription,
+    }),
   });
 
   if(!response.ok) {
@@ -54,7 +57,10 @@ export async function updateTodo(title: string, description: string, id: number)
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ sanitisedTitle, sanitisedDescription }),
+    body: JSON.stringify({
+      title: sanitisedTitle,
+      description: sanitisedDescription,
+    }),
   });
 
   if(!response.ok) {
