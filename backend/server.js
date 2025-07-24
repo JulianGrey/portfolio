@@ -31,7 +31,7 @@ const docClient = DynamoDBDocumentClient.from(ddbClient);
 const tableName = process.env.TABLE_NAME;
 
 app.use(express.json());
-// app.use(limiter);
+app.use(limiter);
 // app.use(cors({
 //   origin: allowedOrigins,
 //   optionsSuccessStatus: 200,
