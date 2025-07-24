@@ -14,7 +14,7 @@ jobs:
 
     env:
       ALLOWED_ORIGINS: ${{ vars.ALLOWED_ORIGINS }}
-      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_REGION_CODE: ${{ secrets.AWS_REGION_CODE }}
 
     runs-on: ubuntu-latest
 
@@ -30,7 +30,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::610495549813:role/github-actions-lambda-deploy-role
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ env.AWS_REGION_CODE }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -55,4 +55,4 @@ jobs:
           aws lambda update-function-code \
             --function-name to-do-app-express-api \
             --zip-file fileb://deployment.zip \
-            --region ${{ env.AWS_REGION }}
+            --region ${{ env.AWS_REGION_CODE }}

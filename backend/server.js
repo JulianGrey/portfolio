@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const serverless = require('serverless-http');
 const rateLimit = require('express-rate-limit');
-// const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
 const {
@@ -14,7 +13,6 @@ const {
 } = require('@aws-sdk/lib-dynamodb');
 
 const app = express();
-// const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',');
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -30,20 +28,15 @@ const limiter = rateLimit({
 });
 
 const ddbClient = new DynamoDBClient({ 
-  region: process.env.AWS_REGION,
+  region: process.env.AWS_REGION_CODE,
   ...(process.env.DYNAMODB_ENDPOINT && { endpoint: process.env.DYNAMODB_ENDPOINT })
 });
 const docClient = DynamoDBDocumentClient.from(ddbClient);
 const tableName = process.env.TABLE_NAME;
 
-app.set('trust proxy', 1);
+app.set('trust proxy', true);
 app.use(express.json());
 app.use(limiter);
-// app.use(cors({
-//   origin: allowedOrigins,
-//   optionsSuccessStatus: 200,
-//   maxAge: 10,
-// }));
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'API is running' });
@@ -133,7 +126,6 @@ if (process.env.NODE_ENV !== 'production') {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
-    // console.log('CORS enabled for:', process.env.ALLOWED_ORIGINS);
   });
 }
 
