@@ -39,6 +39,14 @@ app.use(limiter);
 //   maxAge: 10,
 // }));
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'API is running' });
+});
+
+app.get('/api/', (req, res) => {
+  res.status(200).json({ message: 'API is running' });
+});
+
 app.get('/api/to-dos', async (req, res) => {
   try {
     const result = await docClient.send(new ScanCommand({ TableName: tableName }));
