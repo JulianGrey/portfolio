@@ -9,6 +9,21 @@ For project-specific descriptions, please see the README for the individual proj
 
 <img width="1512" alt="Desktop screenshot" src="https://github.com/user-attachments/assets/eaa46505-72b8-44e0-9e4c-ddeec1ccdd32" />
 
+## Projects Included
+
+### Portfolio Site
+
+A website written in React, showcasing my ability to communicate with a computer through a keyboard.
+- React + Vite frontend
+
+### To Do App
+
+A full-stack todo application with React frontend and Node.js backend, featuring:
+- Create, read, update, delete todos
+- Persistent storage with DynamoDB
+- Clean, responsive UI
+- Full testing suite
+
 
 ## Structure
 
@@ -36,19 +51,3 @@ For project-specific descriptions, please see the README for the individual proj
 - `npm run preview` - Preview production build
 - `npm run test` - Run frontend tests
 - `npm run lint` - Lint frontend code
-
-
-## Projects Included
-
-### Portfolio Site
-
-A website written in React, showcasing my ability to communicate with a computer through a keyboard.
-- React + Vite frontend
-
-### To Do App
-
-A full-stack todo application with React frontend and Node.js backend, featuring:
-- Create, read, update, delete todos
-- Persistent storage with DynamoDB
-- Clean, responsive UI
-- Full testing suite
