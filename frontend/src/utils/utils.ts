@@ -1,3 +1,5 @@
+import DOMPurify from "dompurify";
+
 export function capitalise(word: string): string {
   if (!word) return '';
   return word.charAt(0).toUpperCase() + word.slice(1);
@@ -14,4 +16,11 @@ export function getTimeGreeting(): string {
   } else {
     return 'Good evening';
   }
+}
+
+export function sanitiseInput(input: string): string {
+  return DOMPurify.sanitize(input, {
+    ALLOWED_TAGS: [],
+    ALLOWED_ATTR: [],
+  }).trim();
 }

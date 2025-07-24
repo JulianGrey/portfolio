@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './TodoPage.scss';
+import { sanitiseInput } from '../../utils/utils';
 import {
   addTodo,
   deleteTodo,
@@ -7,6 +7,7 @@ import {
   updateTodo,
 } from '../../services/todoService';
 import Todo, { type TodoProps } from '../../components/Todo/Todo';
+import './TodoPage.scss';
 
 function App() {
   const defaultMessage = 'You have no tasks.';
@@ -18,7 +19,10 @@ function App() {
 
   async function handleAddTodo(title: string, description: string) {
     try {
-      await addTodo(title, description);
+      const sanitisedTitle = sanitiseInput(title);
+      const sanitisedDescription = sanitiseInput(description);
+
+      await addTodo(sanitisedTitle, sanitisedDescription);
       setTodoList(await getTodos());
     } catch (err) {
       console.error('Failed to add to do');
@@ -36,7 +40,10 @@ function App() {
 
   async function handleUpdateTodo(title: string, description: string, id: number) {
     try {
-      await updateTodo(title, description, id);
+      const sanitisedTitle = sanitiseInput(title);
+      const sanitisedDescription = sanitiseInput(description);
+
+      await updateTodo(sanitisedTitle, sanitisedDescription, id);
       setTodoList(await getTodos());
     } catch (err) {
       console.error('Failed to delete to do');
