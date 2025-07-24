@@ -14,7 +14,7 @@ export const content: ContentType[] = [
 
       <p className='top-spacing'>With a background in Computing and Games Development, I bring a unique perspective to the web, blending a keen eye for design with a deep understanding of user interaction. For the past nine years, I've been translating complex problems into elegant, high-performance code. I'm driven by the challenge of building pixel-perfect interfaces and continuously expanding my skill set to keep pace with the ever-evolving tech landscape.</p>
 
-      <p className='top-spacing'>When I'm not coding, I'm usually exploring new technologies, diving into game development, or taking part in simracing.</p>
+      <p className='top-spacing'>When I'm not coding, I'm usually participating in simracing, marvelling at space, or learning about the human mind.</p>
     </>,
   },
   {
