@@ -1,3 +1,5 @@
+import { sanitiseInput } from "../utils/utils";
+
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export async function getTodos() {
@@ -10,12 +12,15 @@ export async function getTodos() {
 }
 
 export async function addTodo(title: string, description: string) {
+  const sanitisedTitle = sanitiseInput(title);
+  const sanitisedDescription = sanitiseInput(description);
+
   const response = await fetch(`${API_BASE_URL}to-dos/add`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ title, description }),
+    body: JSON.stringify({ sanitisedTitle, sanitisedDescription }),
   });
 
   if(!response.ok) {
@@ -41,12 +46,15 @@ export async function deleteTodo(id: number) {
 }
 
 export async function updateTodo(title: string, description: string, id: number) {
+  const sanitisedTitle = sanitiseInput(title);
+  const sanitisedDescription = sanitiseInput(description);
+
   const response = await fetch(`${API_BASE_URL}to-dos/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ title, description }),
+    body: JSON.stringify({ sanitisedTitle, sanitisedDescription }),
   });
 
   if(!response.ok) {

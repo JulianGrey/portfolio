@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { sanitiseInput } from '../../utils/utils';
 import {
   addTodo,
   deleteTodo,
@@ -19,10 +18,7 @@ function App() {
 
   async function handleAddTodo(title: string, description: string) {
     try {
-      const sanitisedTitle = sanitiseInput(title);
-      const sanitisedDescription = sanitiseInput(description);
-
-      await addTodo(sanitisedTitle, sanitisedDescription);
+      await addTodo(title, description);
       setTodoList(await getTodos());
     } catch (err) {
       console.error('Failed to add to do');
@@ -40,10 +36,7 @@ function App() {
 
   async function handleUpdateTodo(title: string, description: string, id: number) {
     try {
-      const sanitisedTitle = sanitiseInput(title);
-      const sanitisedDescription = sanitiseInput(description);
-
-      await updateTodo(sanitisedTitle, sanitisedDescription, id);
+      await updateTodo(title, description, id);
       setTodoList(await getTodos());
     } catch (err) {
       console.error('Failed to delete to do');
