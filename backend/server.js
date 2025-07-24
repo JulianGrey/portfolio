@@ -32,6 +32,7 @@ const tableName = process.env.TABLE_NAME;
 
 app.use(express.json());
 app.use(limiter);
+app.set('trust proxy', 1);
 // app.use(cors({
 //   origin: allowedOrigins,
 //   optionsSuccessStatus: 200,
