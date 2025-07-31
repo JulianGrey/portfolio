@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import GridLink from '../GridLink/GridLink';
 import Modal from '../Modal/Modal';
 import './Navgrid.scss';
 
@@ -7,8 +8,6 @@ interface NavgridProps {
   selection: string;
   onSelect: (category: string) => void
 }
-
-type Alignment = 'h' | 'v';
 
 function useWindowWidth() {
   const [ width, setWidth ] = useState(window.innerWidth);
@@ -32,6 +31,17 @@ export default function Navgrid({ selection, onSelect }: NavgridProps) {
   const [ showModal, setShowModal ] = useState(false);
   const contentExpand = document.getElementById('content-expand');
   const helper = 'Please tap a category above for more information';
+  const navgrid = (
+    <>
+      <GridLink category='about' alignment='h' selection={selection} onSelect={onSelect} />
+      <GridLink category='contact' alignment='v' selection={selection} onSelect={onSelect} />
+      <GridLink category='creative' alignment='h' selection={selection} onSelect={onSelect} />
+      <GridLink category='interactive' alignment='v' selection={selection} onSelect={onSelect} />
+      <GridLink category='portfolio' alignment='h' selection={selection} onSelect={onSelect} />
+      <GridLink category='responsive' alignment='h' selection={selection} onSelect={onSelect} />
+      <GridLink category='simple' alignment='h' selection={selection} onSelect={onSelect} />
+    </>
+  );
 
   function handleShowModal(value: boolean) {
     if (value) {
@@ -45,49 +55,14 @@ export default function Navgrid({ selection, onSelect }: NavgridProps) {
     }
   }
 
-  /**
-   * Create an element for a given category, which is passed computed classes
-   * in order to be rendered correctly by rules set in the stylesheet.
-   * @param category
-   * @param alignment Should the word be aligned (h)orizontally or (v)ertically?
-   * @returns
-   */
-  function composeWord(category: string, alignment: Alignment) {
-    const categoryStr = category.toUpperCase();
-    const stringArray = categoryStr.split('');
-
-    return (
-      <p
-        className={`grid-link ${categoryStr} ${alignment}Word ${ selection === category ? 'active' : '' }`}
-        onClick={() => onSelect(category)}
-      >
-        {
-          stringArray.map((char, index) => (
-            <span key={`${char}${index}`} className={`${categoryStr}-char char${ index + 1 }`}>{ char }</span>
-          ))
-        }
-      </p>
-    );
-  }
-
-  const about = composeWord('about', 'h');
-  const contact = composeWord('contact', 'v');
-  const creative = composeWord('creative', 'h');
-  const interactive = composeWord('interactive', 'v');
-  const portfolio = composeWord('portfolio', 'h');
-  const responsive = composeWord('responsive', 'h');
-  const simple = composeWord('simple', 'h');
-
   return (
     <>
       { isMobile ? (
         <>
           {showModal && createPortal(
-            <Modal visible={modalVisibility} onClick={() => handleShowModal(false)}>
+            <Modal visible={ modalVisibility } onClick={() => handleShowModal(false)}>
               <>
-                <div className='navgrid'>
-                  {about}{contact}{creative}{interactive}{portfolio}{responsive}{simple}
-                </div>
+                <div className='navgrid'>{ navgrid }</div>
                 <div className='helper'>{ helper }</div>
               </>
             </Modal>,
@@ -102,9 +77,7 @@ export default function Navgrid({ selection, onSelect }: NavgridProps) {
           )}
         </>
       ) : (
-        <div className='navgrid'>
-          {about}{contact}{creative}{interactive}{portfolio}{responsive}{simple}
-        </div>
+        <div className='navgrid'>{ navgrid }</div>
       )}
     </>
   );

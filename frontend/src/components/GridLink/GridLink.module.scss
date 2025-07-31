@@ -1,0 +1,17 @@
+@use '../../styles/variables';
+
+.grid-link {
+  cursor: pointer;
+  color: variables.$mid-grey;
+  z-index: 0;
+
+  &:hover {
+    color: variables.$dark-grey;
+    z-index: 2;
+  }
+
+  &.active {
+    color: variables.$red !important;
+    z-index: 1;
+  }
+}
