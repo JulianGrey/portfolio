@@ -9,13 +9,23 @@ const contents = content;
 export default function Home() {
   const [ content, setContent ] = useState(<></>);
   const [ selection, setSelection ] = useState('');
+  const [ transition, setTransition ] = useState(false);
 
   function handleSelection(category: string) {
     const categoryContent = contents.find(content => content.category === category);
+
     if (categoryContent) {
-      setContent(<>{categoryContent.description}</>);
+      setTransition(true);
+
+      setTimeout(() => {
+        setContent(<>{categoryContent.description}</>);
+        setSelection(category);
+      }, 300);
+
+      setTimeout(() => {
+        setTransition(false);
+      }, 600);
     }
-    setSelection(category);
   }
 
   useEffect(() => {
@@ -24,7 +34,7 @@ export default function Home() {
 
   return (
     <div className='home-page'>
-      <div className='navgrid-content'>
+      <div className={`navgrid-content${ transition ? ' content-transition' : '' }`}>
         <div className='content-text' id='content-text'>
           <h2 className='bold'>{capitalise(selection)}</h2>
           {content}
