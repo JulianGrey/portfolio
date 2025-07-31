@@ -23,45 +23,26 @@
     margin: 0;
   }
 
-  .grid-link {
-    color: variables.$mid-grey;
-    z-index: 0;
-  
-    &:hover {
-      color: variables.$dark-grey;
-      z-index: 2;
-    }
-  
-    &.active {
-      color: variables.$red !important;
-      z-index: 1;
-    }
-  }
-  
-  .grid-link, .selected {
-    cursor: pointer;
-  }
-  
   .SIMPLE {
     top: calc(var(--vertical-placement) * 0);
     left: calc(var(--horizontal-placement) * 3);
   }
-  
+
   .PORTFOLIO {
     top: calc(var(--vertical-placement) * 2);
     left: calc(var(--horizontal-placement) * 1);
   }
-  
+
   .RESPONSIVE {
     top: calc(var(--vertical-placement) * 4);
     left: calc(var(--horizontal-placement) * 4);
   }
-  
+
   .CREATIVE {
     top: calc(var(--vertical-placement) * 6);
     left: calc(var(--horizontal-placement) * 4);
   }
-  
+
   .ABOUT {
     top: calc(var(--vertical-placement) * 7);
     left: calc(var(--horizontal-placement) * 0);
@@ -71,19 +52,19 @@
     top: calc(var(--vertical-placement) * 0);
     left: calc(var(--horizontal-placement) * 4);
   }
-  
+
   .CONTACT {
     top: calc(var(--vertical-placement) * 3);
     left: calc(var(--horizontal-placement) * 0);
   }
-  
+
   .SIMPLE, .PORTFOLIO, .RESPONSIVE, .CREATIVE, .ABOUT, .INTERACTIVE, .CONTACT {
     &-char {
       position: absolute;
       width: var(--font-size);
     }
   }
-  
+
   .hWord {
     span {
       position: absolute;
@@ -122,7 +103,7 @@
       left: calc(var(--horizontal-placement) * 10);
     }
   }
-  
+
   .vWord {
     span {
       position: absolute;
