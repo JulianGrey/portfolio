@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styles from './GridLink.module.scss';
 
 type Alignment = 'h' | 'v';
@@ -19,14 +20,20 @@ interface GridLinkProps {
 export default function GridLink({ alignment, category, selection, onSelect }: GridLinkProps) {
   const categoryStr = category.toUpperCase();
   const stringArray = categoryStr.split('');
-  const active = (selection === category);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (selection === category) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [selection, category]);
 
   return (
     <p
       className={`${styles['grid-link']} ${categoryStr} ${alignment}Word${ active ? ` ${styles.active}` : '' }`}
-      onClick={() => {
-        onSelect(category);
-      }}
+      onClick={() => onSelect(category)}
     >
       {
         stringArray.map((char, index) => (

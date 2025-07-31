@@ -11,7 +11,18 @@
   }
 
   &.active {
-    color: variables.$red !important;
     z-index: 1;
+    animation-name: activate;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards
+  }
+}
+
+@keyframes activate {
+  0% {
+    color: variables.$mid-grey;
+  }
+  100% {
+    color: variables.$red;
   }
 }
