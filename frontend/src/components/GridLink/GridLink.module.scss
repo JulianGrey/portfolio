@@ -11,10 +11,6 @@
     animation: mouse-over 0.3s ease forwards;
   }
 
-  &:not(:hover) {
-    animation: mouse-leave 0.3s ease forwards;
-  }
-
   &.active {
     z-index: 2;
     animation: activate 0.3s forwards;
@@ -37,14 +33,5 @@
   }
   to {
     color: variables.$dark-grey;
-  }
-}
-
-@keyframes mouse-leave {
-  from {
-    color: variables.$dark-grey;
-  }
-  to {
-    color: variables.$mid-grey;
   }
 }
