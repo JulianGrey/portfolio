@@ -14,7 +14,8 @@
     z-index: 1;
     animation-name: activate;
     animation-duration: 0.3s;
-    animation-fill-mode: forwards
+    animation-fill-mode: forwards;
+    pointer-events: none;
   }
 }
 
