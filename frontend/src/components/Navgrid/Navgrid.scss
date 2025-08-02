@@ -8,6 +8,7 @@
   display: flex;
   position: relative;
   margin: auto;
+  top: 20px;
   min-height: calc((var(--vertical-placement) * 11));
   min-width: calc((var(--horizontal-placement) * 14));
   text-align: center;
@@ -149,6 +150,7 @@
     --font-size: 24px;
     --horizontal-placement: 20px;
     --vertical-placement: 28px;
+    top: 0;
   }
 
   .helper {
