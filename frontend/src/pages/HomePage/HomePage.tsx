@@ -9,6 +9,7 @@ const contents = content;
 export default function Home() {
   const [ content, setContent ] = useState(<></>);
   const [ selection, setSelection ] = useState('');
+  const [ showNavgrid, setShowNavgrid ] = useState(false);
   const [ transition, setTransition ] = useState(false);
 
   function handleSelection(category: string) {
@@ -30,6 +31,9 @@ export default function Home() {
 
   useEffect(() => {
     handleSelection('about');
+    setTimeout(() => {
+      setShowNavgrid(true);
+    }, 1000);
   }, []);
 
   return (
@@ -41,7 +45,9 @@ export default function Home() {
         </div>
         <div id='content-expand' className='content-expand'></div>
       </div>
-      <Navgrid selection={selection} onSelect={handleSelection} />
+      <div className={`navgrid-wrapper${ showNavgrid ? ' show' : '' }`}>
+        <Navgrid selection={selection} onSelect={handleSelection} />
+      </div>
     </div>
   );
 }

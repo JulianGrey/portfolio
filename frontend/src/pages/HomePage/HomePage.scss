@@ -37,6 +37,14 @@
       }
     }
   }
+
+  .navgrid-wrapper {
+    opacity: 0;
+
+    &.show {
+      animation: fade-in 0.3s forwards;
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -72,6 +80,15 @@
         margin: auto;
       }
     }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
