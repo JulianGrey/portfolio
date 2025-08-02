@@ -1,4 +1,4 @@
-import DOMPurify from "dompurify";
+import DOMPurify from 'dompurify';
 
 export function capitalise(word: string): string {
   if (!word) return '';

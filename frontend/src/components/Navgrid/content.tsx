@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { getTimeGreeting } from "../../utils/utils";
+import { getTimeGreeting } from '../../utils';
 
 export interface ContentType {
   category: string;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navgrid from '../../components/Navgrid/Navgrid';
 import { content } from '../../components/Navgrid/content';
-import { capitalise } from '../../utils/utils';
+import { capitalise } from '../../utils';
 import './HomePage.scss';
 
 const contents = content;
