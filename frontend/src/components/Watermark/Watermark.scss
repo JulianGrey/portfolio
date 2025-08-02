@@ -1,6 +1,6 @@
 .watermark {
   --font-size: 80px;
-  --horizontal-placement: 80px;
+  --horizontal-placement: 70px;
   --vertical-placement: 80px;
 
   display: flex;
@@ -102,7 +102,7 @@
 @media (max-width: 767px) {
   .watermark {
     --font-size: 60px;
-    --horizontal-placement: 60px;
+    --horizontal-placement: 50px;
     --vertical-placement: 60px;
 
     top: 120px;
@@ -113,7 +113,7 @@
 @media (max-width: 575px) {
   .watermark {
     --font-size: 50px;
-    --horizontal-placement: 50px;
+    --horizontal-placement: 40px;
     --vertical-placement: 50px;
 
     top: 120px;
