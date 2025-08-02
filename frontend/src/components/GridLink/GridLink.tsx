@@ -21,6 +21,7 @@ export default function GridLink({ alignment, category, selection, onSelect }: G
   const categoryStr = category.toUpperCase();
   const stringArray = categoryStr.split('');
   const [active, setActive] = useState(false);
+  const [activating, setActivating] = useState(false);
 
   useEffect(() => {
     if (selection === category) {
@@ -30,10 +31,19 @@ export default function GridLink({ alignment, category, selection, onSelect }: G
     }
   }, [selection, category]);
 
+  function handleSelect(category: string) {
+    setActivating(true);
+    onSelect(category);
+
+    setTimeout(() => {
+      setActivating(false);
+    }, 300);
+  }
+
   return (
     <p
-      className={`${styles['grid-link']} ${categoryStr} ${alignment}Word${ active ? ` ${styles.active}` : '' }`}
-      onClick={() => onSelect(category)}
+      className={`${styles['grid-link']} ${categoryStr} ${alignment}Word${ active ? ` ${ styles.active }` : '' }${ activating ? ` ${ styles.activating }` : '' }`}
+      onClick={() => handleSelect(category)}
     >
       {
         stringArray.map((char, index) => (
