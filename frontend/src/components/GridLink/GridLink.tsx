@@ -6,8 +6,8 @@ type Alignment = 'h' | 'v';
 interface GridLinkProps {
   alignment: Alignment;
   category: string;
-  selection: string;
-  onSelect: (category: string) => void;
+  selection?: string;
+  onSelect?: (category: string) => void;
 }
 
 /**
@@ -17,7 +17,7 @@ interface GridLinkProps {
  * @param alignment Should the word be aligned (h)orizontally or (v)ertically?
  * @returns
  */
-export default function GridLink({ alignment, category, selection, onSelect }: GridLinkProps) {
+export default function GridLink({ alignment, category, selection = '', onSelect = () => {} }: GridLinkProps) {
   const categoryStr = category.toUpperCase();
   const stringArray = categoryStr.split('');
   const [active, setActive] = useState(false);

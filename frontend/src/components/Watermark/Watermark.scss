@@ -1,0 +1,122 @@
+.watermark {
+  --font-size: 80px;
+  --horizontal-placement: 80px;
+  --vertical-placement: 80px;
+
+  display: flex;
+  z-index: -1;
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  margin: auto;
+  min-height: calc((var(--vertical-placement) * 7));
+  min-width: calc((var(--horizontal-placement) * 6));
+  text-align: center;
+  opacity: 0.1;
+
+  p {
+    font-family: 'Muli', Verdana, Arial, sans-serif;
+    font-size: var(--font-size);
+    font-weight: bold;
+  }
+
+  .hWord, .vWord {
+    position: absolute;
+    margin: 0;
+  }
+
+  .JULIAN {
+    top: calc(var(--vertical-placement) * 1);
+    left: calc(var(--horizontal-placement) * 0);
+  }
+ 
+  .RICARDO {
+    top: calc(var(--vertical-placement) * 0);
+    left: calc(var(--horizontal-placement) * 3);
+  }
+ 
+  .GREY {
+    top: calc(var(--vertical-placement) * 4);
+    left: calc(var(--horizontal-placement) * 2);
+  }
+
+  .JULIAN, .RICARDO, .GREY {
+    &-char {
+      position: absolute;
+      width: var(--font-size);
+    }
+  }
+  
+  .hWord {
+    span {
+      position: absolute;
+    }
+    .char1 {
+      left: calc(var(--horizontal-placement) * 0);
+    }
+    .char2 {
+      left: calc(var(--horizontal-placement) * 1);
+    }
+    .char3 {
+      left: calc(var(--horizontal-placement) * 2);
+    }
+    .char4 {
+      left: calc(var(--horizontal-placement) * 3);
+    }
+    .char5 {
+      left: calc(var(--horizontal-placement) * 4);
+    }
+    .char6 {
+      left: calc(var(--horizontal-placement) * 5);
+    }
+  }
+
+  .vWord {
+    span {
+      position: absolute;
+    }
+    .char1 {
+      top: calc(var(--vertical-placement) * 0);
+    }
+    .char2 {
+      top: calc(var(--vertical-placement) * 1);
+    }
+    .char3 {
+      top: calc(var(--vertical-placement) * 2);
+    }
+    .char4 {
+      top: calc(var(--vertical-placement) * 3);
+    }
+    .char5 {
+      top: calc(var(--vertical-placement) * 4);
+    }
+    .char6 {
+      top: calc(var(--vertical-placement) * 5);
+    }
+    .char7 {
+      top: calc(var(--vertical-placement) * 6);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .watermark {
+    --font-size: 60px;
+    --horizontal-placement: 60px;
+    --vertical-placement: 60px;
+
+    top: 120px;
+    left: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .watermark {
+    --font-size: 50px;
+    --horizontal-placement: 50px;
+    --vertical-placement: 50px;
+
+    top: 120px;
+    left: 10px;
+  }
+}
