@@ -4,7 +4,6 @@ import './App.scss';
 
 import Layout from './layouts/Layout';
 import HomePage from './pages/HomePage/HomePage';
-import TodoPage from './pages/TodoPage/TodoPage';
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/todo-app" element={<TodoPage />} />
           </Routes>
         </Layout>
       </Router>
