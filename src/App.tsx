@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Watermark from './components/Watermark/Watermark';
-import './App.scss';
+import './App.css';
 
 import Layout from './layouts/Layout';
 import HomePage from './pages/HomePage/HomePage';

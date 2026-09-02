@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './GridLink.module.scss';
+import styles from './GridLink.module.css';
 
 type Alignment = 'h' | 'v';
 

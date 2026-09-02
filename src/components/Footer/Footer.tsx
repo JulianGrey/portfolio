@@ -1,5 +1,5 @@
 import FooterColumn from '../FooterColumn/FooterColumn';
-import './Footer.scss';
+import './Footer.css';
 
 export default function Footer() {
   return (

@@ -1,0 +1,55 @@
+@import 'reset-css/reset.css';
+
+:root {
+  --colour-black: #000;
+  --colour-dark-grey: #555;
+  --colour-green: #4ddf69;
+  --colour-mid-grey: #aaa;
+  --colour-light-grey: #dedede;
+  --colour-lighter-grey: #eee;
+  --colour-lightest-grey: #f6f6f6;
+  --colour-red: #c00;
+  --colour-white: #fff;
+  --colour-background: #0f172a;
+  --colour-header-background: #070a13;
+  --colour-hyperlink: #7be4e8;
+  --font-body: 'Muli', Arial, sans-serif;
+  --content-width: 1280px;
+  --layout-buffer: 80px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.83em;
+}
+
+h6 {
+  font-size: 0.67em;
+}
+
+p {
+  line-height: 18px;
+}
