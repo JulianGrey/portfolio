@@ -1,0 +1,36 @@
+html {
+  background: var(--colour-background);
+  color: var(--colour-white);
+}
+
+body {
+  margin: 0 auto;
+  font-family: var(--font-body);
+}
+
+header, main, footer {
+  display: flex;
+  justify-content: center;
+
+  & > * {
+    max-width: var(--content-width);
+  }
+}
+
+a {
+  font-weight: bold;
+  color: var(--colour-hyperlink);
+  text-decoration: none;
+
+  &:active {
+    color: var(--colour-red);
+  }
+
+  &:hover {
+    color: var(--colour-dark-grey);
+  }
+}
+
+.bold {
+  font-weight: 700;
+}

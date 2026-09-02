@@ -59,11 +59,9 @@
     left: calc(var(--horizontal-placement) * 0);
   }
 
-  .SIMPLE, .PORTFOLIO, .RESPONSIVE, .CREATIVE, .ABOUT, .INTERACTIVE, .CONTACT {
-    &-char {
-      position: absolute;
-      width: var(--font-size);
-    }
+  .SIMPLE-char, .PORTFOLIO-char, .RESPONSIVE-char, .CREATIVE-char, .ABOUT-char, .INTERACTIVE-char, .CONTACT-char {
+    position: absolute;
+    width: var(--font-size);
   }
 
   .hWord {

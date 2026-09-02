@@ -1,11 +1,9 @@
-@use '../../styles/variables';
-
 header {
   position: fixed;
   height: 80px;
   padding: 12px;
   width: 100%;
-  background: variables.$header-background-colour;
+  background: var(--colour-header-background);
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,12 +1,10 @@
-@use '../../styles/variables';
-
 .grid-link {
   cursor: pointer;
-  color: variables.$mid-grey;
+  color: var(--colour-mid-grey);
   z-index: 0;
 
   &:hover, &.activating {
-    color: variables.$dark-grey;
+    color: var(--colour-dark-grey);
   }
 
   &:hover {
@@ -27,18 +25,18 @@
 
 @keyframes activate {
   0% {
-    color: variables.$dark-grey;
+    color: var(--colour-dark-grey);
   }
   100% {
-    color: variables.$red;
+    color: var(--colour-red);
   }
 }
 
 @keyframes mouse-over {
   from {
-    color: variables.$mid-grey;
+    color: var(--colour-mid-grey);
   }
   to {
-    color: variables.$dark-grey;
+    color: var(--colour-dark-grey);
   }
 }

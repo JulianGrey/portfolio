@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import './Intro.scss';
+import './Intro.css';
 
 interface INTRO {
   title: string;

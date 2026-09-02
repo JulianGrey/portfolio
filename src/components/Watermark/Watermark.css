@@ -40,11 +40,9 @@
     left: calc(var(--horizontal-placement) * 2);
   }
 
-  .JULIAN, .RICARDO, .GREY {
-    &-char {
-      position: absolute;
-      width: var(--font-size);
-    }
+  .JULIAN-char, .RICARDO-char, .GREY-char {
+    position: absolute;
+    width: var(--font-size);
   }
   
   .hWord {

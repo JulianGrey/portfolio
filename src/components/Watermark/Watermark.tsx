@@ -1,5 +1,5 @@
 import GridLink from '../GridLink/GridLink';
-import './Watermark.scss';
+import './Watermark.css';
 
 export default function Watermark() {
   return (

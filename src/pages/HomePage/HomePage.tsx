@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navgrid from '../../components/Navgrid/Navgrid';
 import { content } from '../../components/Navgrid/content';
 import { capitalise } from '../../utils';
-import './HomePage.scss';
+import './HomePage.css';
 
 const contents = content;
 

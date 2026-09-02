@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import './FooterColumn.scss';
+import './FooterColumn.css';
 
 interface FooterColumnProps {
   heading: string;

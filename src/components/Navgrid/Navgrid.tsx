@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import GridLink from '../GridLink/GridLink';
 import Modal from '../Modal/Modal';
-import './Navgrid.scss';
+import './Navgrid.css';
 
 interface NavgridProps {
   selection: string;

@@ -1,0 +1,7 @@
+.footer {
+  margin: var(--layout-buffer) 0;
+
+  li {
+    list-style-type: none;
+  }
+}
